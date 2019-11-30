@@ -55,4 +55,25 @@ class User extends Authenticatable
     {
         $this->hasOneThrough(Location::class, Profile::class);
     }
+
+    public function posts()
+    {
+        $this->hasMany(Post::class);
+    }
+
+    public function videos()
+    {
+        $this->hasMany(Video::class);
+    }
+
+    public function comments()
+    {
+        $this->hasMany(Comment::class);
+    }
+
+    public function image()
+    {
+        $this->morphOne(Image::class, 'imageable');
+    }
+
 }
