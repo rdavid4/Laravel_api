@@ -8,6 +8,6 @@ class Profile extends Model
 {
     public function location()
     {
-        $this->hasOneThrough(Location::class, Profile::class);
+        return $this->hasOne(Location::class);
     }
 }

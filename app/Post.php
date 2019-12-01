@@ -8,27 +8,27 @@ class Post extends Model
 {
     public function user()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function category()
     {
-        $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function comments()
     {
-        $this->morphMany(Comment::class, 'commentable');
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
     public function image()
     {
-        $this->morphOne(Image::class, 'imageable');
+        return $this->morphOne(Image::class, 'imageable');
     }
 
     public function tags()
     {
-        $this->morphToMany(Tag::class, 'taggable');
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 
 }

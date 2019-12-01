@@ -8,11 +8,11 @@ class Tag extends Model
 {
     public function posts()
     {
-        $this->morphedByMany(Post::class, 'taggable');
+        return $this->morphedByMany(Post::class, 'taggable');
     }
 
     public function videos()
     {
-        $this->morphedByMany(Tag::class, 'taggable');
+        return $this->morphedByMany(Tag::class, 'taggable');
     }
 }

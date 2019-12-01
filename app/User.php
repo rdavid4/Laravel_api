@@ -44,36 +44,36 @@ class User extends Authenticatable
 
     public function level()
     {
-        $this->belongsTo(Level::class);
+        return $this->belongsTo(Level::class);
     }
     public function groups()
     {
-        $this->belongsToMany(Group::class)->withTimestamps();
+        return $this->belongsToMany(Group::class)->withTimestamps();
     }
     //Localización a travez de perfil
     public function location()
     {
-        $this->hasOneThrough(Location::class, Profile::class);
+        return $this->hasOneThrough(Location::class, Profile::class);
     }
 
     public function posts()
     {
-        $this->hasMany(Post::class);
+        return $this->hasMany(Post::class);
     }
 
     public function videos()
     {
-        $this->hasMany(Video::class);
+        return $this->hasMany(Video::class);
     }
 
     public function comments()
     {
-        $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 
     public function image()
     {
-        $this->morphOne(Image::class, 'imageable');
+        return $this->morphOne(Image::class, 'imageable');
     }
 
 }
